@@ -33,50 +33,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider 
-        attribute="class" 
-        defaultTheme="system"
-        enableSystem
-        enableColorScheme
-        themes={["light", "dark", "system"]}
-        value={{
-          light: "light",
-          dark: "dark",
-          system: "system",
-        }}
-        storageKey="next-themes"
-        scriptProps={{
-          nonce: undefined, // Add your CSP nonce here if needed
-        }}
-        // Set to true to disable transitions on theme change  
-        disableTransitionOnChange>
-          <ColorThemeProvider
-            // Default color theme, can be changed later
-            defaultColorTheme="default"
-            // List of available color themes
-            availableColorThemes={[
-              "default",
-              "blue",
-              "green",
-              "amber",
-              "rose",
-              "purple",
-              "orange",
-              "teal",
-              "mono",
-              "scaled"
-            ]}
-            // Storage key for color theme
-            storageKey="color-theme"
-            // Set to true to disable transitions on color theme change
-            disableTransitionOnChange={false}
-            // Optional: Add a nonce for CSP if needed
-            scriptProps={{
-              nonce: undefined, // Add your CSP nonce here if needed
-            }}
-          >
+          attribute="class">
+          <ColorThemeProvider>
             {children}
           </ColorThemeProvider>
-          
         </ThemeProvider>
         
       </body>
