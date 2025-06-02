@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider as ColorThemeProvider } from '@/context/ThemeContext';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +26,59 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://unpkg.com/dropzone@6.0.0-beta.2/dist/dropzone.css" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider 
+        attribute="class" 
+        defaultTheme="system"
+        enableSystem
+        enableColorScheme
+        themes={["light", "dark", "system"]}
+        value={{
+          light: "light",
+          dark: "dark",
+          system: "system",
+        }}
+        storageKey="next-themes"
+        scriptProps={{
+          nonce: undefined, // Add your CSP nonce here if needed
+        }}
+        // Set to true to disable transitions on theme change  
+        disableTransitionOnChange>
+          <ColorThemeProvider
+            // Default color theme, can be changed later
+            defaultColorTheme="default"
+            // List of available color themes
+            availableColorThemes={[
+              "default",
+              "blue",
+              "green",
+              "amber",
+              "rose",
+              "purple",
+              "orange",
+              "teal",
+              "mono",
+              "scaled"
+            ]}
+            // Storage key for color theme
+            storageKey="color-theme"
+            // Set to true to disable transitions on color theme change
+            disableTransitionOnChange={false}
+            // Optional: Add a nonce for CSP if needed
+            scriptProps={{
+              nonce: undefined, // Add your CSP nonce here if needed
+            }}
+          >
+            {children}
+          </ColorThemeProvider>
+          
+        </ThemeProvider>
+        
       </body>
     </html>
   );
