@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import SentTransfersPage from './Sent/page';
-import ReceivedTransfersPage from './Received/page';
-import RequestedTransfersPage from './Requested/page';
+import SentTransfers from './Sent/SentTransfers';
+import ReceivedTransfers from './Received/ReceivedTransfers';
+import RequestedTransfers from './Requested/RequestedTransfers';
 
 
 export default function TransfersPage() {
@@ -37,15 +37,15 @@ export default function TransfersPage() {
         </TabsList>
 
         <TabsContent value="sent">
-          <SentTransfersPage searchQuery={searchQuery} />
+          <SentTransfers searchQuery={searchQuery} />
         </TabsContent>
 
         <TabsContent value="received">
-          <ReceivedTransfersPage searchQuery={searchQuery}  />
+          <ReceivedTransfers searchQuery={searchQuery} />
         </TabsContent>
 
         <TabsContent value="requested">
-          <RequestedTransfersPage searchQuery={searchQuery} />
+          <RequestedTransfers searchQuery={searchQuery} />
         </TabsContent>
       </Tabs>
     </div>
