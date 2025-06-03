@@ -41,7 +41,7 @@ export default function TransfersPage() {
         </TabsContent>
 
         <TabsContent value="received">
-          <ReceivedTransfersPage searchQuery={searchQuery} />
+          <ReceivedTransfersPage searchQuery={searchQuery}  />
         </TabsContent>
 
         <TabsContent value="requested">

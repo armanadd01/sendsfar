@@ -17,9 +17,9 @@ import {
 } from '@/components/ui/pagination';
 import { useRouter } from 'next/navigation';
 
-interface ReceivedTransfersPageProps {
+type ReceivedTransfersPageProps = {
   searchQuery: string;
-}
+};
 
 export default function ReceivedTransfersPage({ searchQuery }: ReceivedTransfersPageProps) {
   const router = useRouter();
