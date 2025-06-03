@@ -1,9 +1,10 @@
 'use client';
 import React from "react";
 import { useNavigation } from "@/context/NavigationContext";
-import { TransferUploadForm } from "./UploadForm/page";
+// import { UploadFormPage } from "./UploadForm/page";
 import TransfersPage from "./Transfers/page";
 import LoginPage from "../login/page";
+import UploadFormPage from "./UploadForm/page";
 
 
 const ChildPages = () => {
@@ -12,7 +13,7 @@ const { activePage } = useNavigation();
   const renderContent = () => {
     switch (activePage) {
       case 'upload-form':
-        return <TransferUploadForm />;
+        return <UploadFormPage />;
       case 'transfers':
         return <TransfersPage />;
       // case 'history':
@@ -30,7 +31,7 @@ const { activePage } = useNavigation();
       case 'login':
         return <LoginPage />;
       default:
-        return <TransferUploadForm />;
+        return <UploadFormPage />;
     }
   };
 
