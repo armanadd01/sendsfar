@@ -3,13 +3,13 @@ import FileUpload from "@/components/FileUpload";
 import { Header } from "@/components/Header";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import ChildPages from "./child-pages/page";
-import { NavigationProvider } from "@/context/NavigationContext";
+// import { NavigationProvider } from "@/context/NavigationContext";
 
 
 export default function Home() {
   return (
     <>
-    <NavigationProvider>
+
       <main className="flex min-h-screen flex-col items-center justify-between">
         <ResizablePanelGroup direction="horizontal">
           <ResizablePanel 
@@ -23,7 +23,7 @@ export default function Home() {
           </ResizablePanel>
         </ResizablePanelGroup>
       </main>
-     </NavigationProvider>
+
       
     </>
   );
