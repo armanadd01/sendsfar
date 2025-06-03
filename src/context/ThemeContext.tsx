@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Theme = 'default' | 'blue' | 'green' | 'amber' | 'rose' | 'purple' | 'orange' | 'teal' | 'mono' | 'scaled';
+export type Theme = 'default' | 'blue' | 'green' | 'amber' | 'rose' | 'purple' | 'orange' | 'teal' | 'mono' | 'scaled' | 'light-mint' | 'persian-green' | 'celtic-blue' | 'imperial-red' | 'raisin-black';
 
 interface ThemeContextProps {
   colorTheme: Theme;

@@ -3,12 +3,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
+// import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { cn } from "@/lib/utils";
+// import { cn } from "@/lib/utils";
 import React from "react";
 import { useNavigation } from "@/context/NavigationContext";
 import { ProfileDropdown } from "./ProfileDropdown";
+import { MenuNavBar } from "./MenuNavBar";
 
 interface HeaderProps {
   showBackButton?: boolean;
@@ -31,6 +32,7 @@ export function Header({ showBackButton, onBack, title }: HeaderProps) {
   } catch {
     console.log("Navigation context not available");
   }
+
 
   return (
     <header className="!border-b">
@@ -70,33 +72,92 @@ export function Header({ showBackButton, onBack, title }: HeaderProps) {
           )}
         </div>
 
+          {/* <MenuNavBar /> */}
+
         {!showBackButton && (
-          <NavigationMenu>
-            <NavigationMenuList className="hidden md:flex gap-6">
-              {[
-                { id: "upload-form", name: "Upload Form" },
-                { id: "transfers", name: "Transfers" },
-                { id: "pricing", name: "Pricing" },
-                { id: "branding", name: "Branding" },
-              ].map(({ id, name }) => (
-                <NavigationMenuItem key={id}>
-                  <NavigationMenuLink
-                    asChild
-                    className={cn(
-                      "text-sm font-medium transition-colors hover:text-primary",
-                      navigation.activePage === id
-                        ? "text-black dark:text-white"
-                        : "text-muted-foreground"
-                    )}
-                  >
-                    <button onClick={() => navigation.setActivePage(id)}>
-                      {name}
-                    </button>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+          // <NavigationMenu viewport={false} >
+          //   <NavigationMenuList className="hidden md:flex gap-6">
+          //     {navItems.map((item) => (
+          //       <NavigationMenuItem key={item.id}>
+          //         {item.hasChildren ? (
+          //           <>
+          //             <NavigationMenuTrigger>{item.name}</NavigationMenuTrigger>
+          //             <NavigationMenuContent>
+          //               {item.featured ? (
+          //                 <ul className="grid gap-1 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] p-4">
+          //                   <li className="row-span-3">
+          //                     <NavigationMenuLink
+          //                       asChild >
+          //                         <Link
+          //                           href={`/child-pages/${item.featured.contentId}`}
+          //                           onClick={() => navigation.setActivePage(item.featured.contentId)}
+          //                           className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none select-none hover:shadow-md"
+          //                         >
+          //                           <div className="mt-4 mb-2 text-lg font-medium">
+          //                             {item.featured.title}
+          //                           </div>
+          //                           <p className="text-muted-foreground text-sm leading-tight">
+          //                             {item.featured.description}
+          //                           </p>
+          //                         </Link>
+
+          //                       </NavigationMenuLink>
+                              
+          //                   </li>
+          //                   {item.content.map((link) => (
+          //                     <li key={link.contentId}>
+          //                       <ListItem
+          //                         onClick={() => navigation.setActivePage(link.contentId)}
+          //                         className="text-left"
+          //                       >
+          //                         <div className="font-medium">{link.title}</div>
+          //                         <div className="text-muted-foreground text-sm">
+          //                           {link.description}
+          //                         </div>
+          //                       </ListItem>
+          //                     </li>
+          //                   ))}
+          //                 </ul>
+          //               ) : (
+          //                 <ul className="grid w-[300px] gap-4 p-4">
+          //                   <li className="flex flex-col gap-4">
+          //                     {item.content.map((link) => (
+          //                       <button
+          //                         key={link.contentId}
+          //                         onClick={() => navigation.setActivePage(link.contentId)}
+          //                         className="text-left"
+          //                       >
+          //                         <div className="font-medium">{link.title}</div>
+          //                         <div className="text-muted-foreground text-sm">
+          //                           {link.description}
+          //                         </div>
+          //                       </button>
+          //                     ))}
+          //                   </li>
+          //                 </ul>
+          //               )}
+          //             </NavigationMenuContent>
+          //           </>
+          //         ) : (
+          //           <NavigationMenuLink
+          //             asChild
+          //             className={cn(
+          //               'text-sm font-medium transition-colors hover:text-primary',
+          //               navigation.activePage === item.id
+          //                 ? 'text-black dark:text-white'
+          //                 : 'text-muted-foreground'
+          //             )}
+          //           >
+          //             <button onClick={() => navigation.setActivePage(item.id)}>
+          //               {item.name}
+          //             </button>
+          //           </NavigationMenuLink>
+          //         )}
+          //       </NavigationMenuItem>
+          //     ))}
+          //   </NavigationMenuList>
+          // </NavigationMenu>
+          <MenuNavBar />
         )}
 
         <div className="flex items-center gap-4">
