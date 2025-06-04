@@ -13,12 +13,13 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-between">
         <ResizablePanelGroup direction="horizontal">
           <ResizablePanel 
-          defaultSize={45} minSize={25} maxSize={55}>
+            defaultSize={45} minSize={30} maxSize={55}>
             <Header title="Dashboard" />
               <ChildPages />
           </ResizablePanel>
           <ResizableHandle withHandle  />
-          <ResizablePanel>
+          <ResizablePanel 
+          defaultSize={55} minSize={30} maxSize={75}>
             <FileUpload />
           </ResizablePanel>
         </ResizablePanelGroup>

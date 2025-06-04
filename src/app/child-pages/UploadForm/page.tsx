@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -10,6 +9,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
+import { Label } from '@/components/ui/label';
 
 const formSchema = z.object({
   emailTo: z.string().email({
@@ -59,8 +60,8 @@ export default function UploadFormPage() {
                 control={form.control}
                 name="emailTo"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email to</FormLabel>
+                  <FormItem className="mb-4">
+                    <Label>Email to</Label>
                     <FormControl>
                       <Input placeholder="recipient@example.com" {...field} />
                     </FormControl>
@@ -73,8 +74,8 @@ export default function UploadFormPage() {
                 control={form.control}
                 name="yourEmail"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Your email</FormLabel>
+                  <FormItem className="mb-4">
+                    <Label>Your email</Label>
                     <FormControl>
                       <Input placeholder="your@email.com" {...field} />
                     </FormControl>
@@ -87,8 +88,8 @@ export default function UploadFormPage() {
                 control={form.control}
                 name="title"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Title</FormLabel>
+                  <FormItem className="mb-4">
+                    <Label>Title</Label>
                     <FormControl>
                       <Input placeholder="Transfer title" {...field} />
                     </FormControl>
@@ -101,8 +102,8 @@ export default function UploadFormPage() {
                 control={form.control}
                 name="message"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Message</FormLabel>
+                  <FormItem className="mb-4">
+                    <Label>Message</Label>
                     <FormControl>
                       <Textarea 
                         placeholder="Add a message (optional)"
@@ -119,11 +120,11 @@ export default function UploadFormPage() {
                 control={form.control}
                 name="expiresIn"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Expires in</FormLabel>
+                  <FormItem className="mb-4">
+                    <Label>Expires in</Label>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
-                        <SelectTrigger>
+                        <SelectTrigger className='!h-12 w-full'>
                           <SelectValue placeholder="Select expiration time" />
                         </SelectTrigger>
                       </FormControl>

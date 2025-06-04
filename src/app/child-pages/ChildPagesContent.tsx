@@ -3,8 +3,9 @@
 import React from "react";
 import { useNavigation } from "@/context/NavigationContext";
 import TransfersPage from "./Transfers/page";
-import LoginPage from "../login/page";
 import UploadFormPage from "./UploadForm/page";
+import PricingPage from "./Pricing/page";
+import AccountPage from "../account/page";
 
 export default function ChildPagesContent() {
   const { activePage } = useNavigation();
@@ -15,8 +16,12 @@ export default function ChildPagesContent() {
         return <UploadFormPage />;
       case 'transfers':
         return <TransfersPage />;
-      case 'login':
-        return <LoginPage />;
+      case 'pricing':
+        return <PricingPage />;
+      case 'account':
+        // Placeholder for account page, if needed
+      return <AccountPage />;
+      
       default:
         return <UploadFormPage />;
     }
