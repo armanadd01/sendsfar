@@ -1,14 +1,15 @@
 "use client";
 
 import { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent, CardFooter, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table';
+import { useRouter } from 'next/navigation';
 
 type Plan = {
   id: string;
   name: string;
-  price: string;
+  price: number;
   description: string;
   features: string[];
   isPopular: boolean;
@@ -19,19 +20,23 @@ type Plan = {
 };
 
 export default function AccountPlans() {
-  const [, setSelectedPlan] = useState<string | null>(null);
+  // // es-lint-disable-next-line @typescript-eslint/no-unused-vars
+  // const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  // // es-lint-disable-next-line @typescript-eslint/no-unused-vars
+  // const [, setSelectedPlan] = useState<string | null>(null);
   const [showAllPlans, setShowAllPlans] = useState(false);
 
   const plans: Plan[] = [
-    {
+      {
       id: 'free',
       name: 'Free',
-      price: '$0',
-      description: 'Perfect for getting started',
+      description: 'For individuals and small teams getting started.',
+      price: 0,
       features: [
-        'Basic file sharing',
-        'Email support',
-        'Standard transfer speeds'
+        'Up to 2GB per transfer',
+        '7 days file retention',
+        'Basic email notifications',
+        'Web access only',
       ],
       isPopular: false,
       isCurrent: true,
@@ -42,15 +47,15 @@ export default function AccountPlans() {
     {
       id: 'pro',
       name: 'Pro',
-      price: '$9.99',
-      description: 'For power users and small teams',
+      description: 'For professionals who need more power and flexibility.',
+      price: 12,
       features: [
-        'Everything in Free, plus:',
-        '100 GB storage',
-        'Unlimited transfers',
-        '7-day transfer expiry',
+        'Up to 20GB per transfer',
+        '30 days file retention',
+        'Advanced tracking & analytics',
         'Password protection',
-        'Priority support'
+        'Custom branding',
+        'API access',
       ],
       isPopular: true,
       isCurrent: false,
@@ -61,37 +66,42 @@ export default function AccountPlans() {
     {
       id: 'business',
       name: 'Business',
-      price: '$29.99',
-      description: 'For teams and businesses',
+      description: 'For teams that need advanced features and support.',
+      price: 23,
       features: [
-        'Everything in Pro, plus:',
-        '1 TB storage',
+        'Unlimited transfer size',
+        '90 days file retention',
+        'Advanced security features',
         'Team management',
-        '30-day transfer expiry',
-        'Custom branding',
-        'Advanced analytics',
-        'API access'
+        'Priority support',
+        'All integrations included',
+        'Custom workflows',
+        'Audit logs',
       ],
       isPopular: false,
       isCurrent: false,
       storage: '1 TB',
       transfers: 'Unlimited',
       expiry: '30 days'
-    }
+    },
   ];
 
   const currentPlan = plans.find(plan => plan.isCurrent);
   // Filtered plans are used in the UI but not directly referenced
 
-  const handleUpgrade = (planId: string) => {
-    setSelectedPlan(planId);
-    // TODO: Implement upgrade logic
-    console.log('Upgrading to plan:', planId);
-  };
+  const router = useRouter();
+  
+    const handleUpgrade = (plan: typeof plans[0]) => {
+      console.log(`Upgrading to plana:  /payment?plan=${plan.id}&name=${encodeURIComponent(plan.name)}&price=${plan.price}`);
+      // Navigate to payment page with plan details
+      router.push(`/payment?plan=${plan.id}&name=${encodeURIComponent(plan.name)}&price=${plan.price}`);
+    };
 
   const toggleShowAllPlans = () => {
     setShowAllPlans(!showAllPlans);
   };
+
+
 
   return (
     <div className="space-y-8">
@@ -141,49 +151,54 @@ export default function AccountPlans() {
         <CardContent className={`grid gap-6 p-6 ${showAllPlans ? 'grid-cols-1 md:grid-cols-3' : 'grid-cols-1'}`}> 
           {showAllPlans ? (
             plans.map((plan) => (
-              <Card key={plan.id} className={`relative ${plan.isPopular ? 'ring-2 ring-blue-500' : ''}`}>
-                {plan.isPopular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle>{plan.name}</CardTitle>
-                    <div className="text-2xl font-bold">{plan.price}<span className="text-sm font-normal text-muted-foreground">/mo</span></div>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{plan.description}</p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {plan.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <svg
-                          className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        <span className="ml-2 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+              <Card key={plan.id} className={`relative !grid ${plan.isPopular ? 'ring-2 ring-primary' : ''}`}>
+              {plan.isPopular && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary text-primary-foreground">
+                    Most Popular
+                  </span>
+                </div>
+              )}
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                <CardTitle>{plan.name}</CardTitle>
+                <div className="text-2xl font-bold">{plan.price}<span className="text-sm font-normal text-muted-foreground">/mo</span></div>
+                </div>
+                <CardDescription>{plan.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                {plan.features.map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                  <svg
+                    className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                    />
+                  </svg>
+                  <span className="ml-2 text-sm">{feature}</span>
+                  </li>
+                ))}
+                </ul>
+                
+              </CardContent>
+                <CardFooter className='flex flex-col items-stretch self-end'>
                   <Button 
-                    className={`w-full mt-6 ${plan.isCurrent ? 'bg-gray-300' : plan.isPopular ? 'bg-blue-600 hover:bg-blue-700' : ''}`}
+                    className={`w-full ${plan.isCurrent ? 'bg-muted-foreground/60 text-primary-foreground': ''}`}
                     disabled={plan.isCurrent}
-                    onClick={() => handleUpgrade(plan.id)}
+                    onClick={() => handleUpgrade(plan)}
+                    variant={plan.isPopular ? 'default' : 'outline'}
+                    size="lg"
                   >
                     {plan.isCurrent ? 'Current Plan' : 'Upgrade'}
                   </Button>
-                </CardContent>
+                </CardFooter>
               </Card>
             ))
           ) : (
