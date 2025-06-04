@@ -2,16 +2,16 @@
 
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import AccountProfile from './profile/AccountProfile';
-import AccountSecurity from './security/AccountSecurity';
-import AccountPlans from './Plans/AccountPlans';
-import AccountIntegrations from './integrations/AccountIntegrations';
+import IntegrationsPage from './integrations/page';
+import ProfilePage from './profile/page';
+import SecurityPage from './security/page';
+import PlansPage from './Plans/page';
 
 const tabs = [
-  { id: 'profile', label: 'Profile', component: AccountProfile },
-  { id: 'security', label: 'Security', component: AccountSecurity },
-  { id: 'plans', label: 'Plans', component: AccountPlans },
-  { id: 'integrations', label: 'Integrations', component: AccountIntegrations },
+  { id: 'profile', label: 'Profile', component: ProfilePage },
+  { id: 'security', label: 'Security', component: SecurityPage },
+  { id: 'plans', label: 'Plans', component: PlansPage }, // Uncomment when you implement this component
+  { id: 'integrations', label: 'Integrations', component: IntegrationsPage }, // Uncomment when you implement this component
 ];
 
 export default function AccountPage() {
@@ -34,7 +34,7 @@ export default function AccountPage() {
     window.history.pushState({}, '', `${pathname}#${tabId}`);
   };
 
-  const ActiveComponent = tabs.find(tab => tab.id === activeTab)?.component || AccountProfile;
+  const ActiveComponent = tabs.find(tab => tab.id === activeTab)?.component || ProfilePage;
 
   return (
     <div className="container mx-auto px-4 py-8">
