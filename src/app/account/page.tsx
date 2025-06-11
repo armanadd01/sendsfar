@@ -47,10 +47,10 @@ export default function AccountPage() {
             <button
               key={tab.id}
               onClick={() => handleTabChange(tab.id)}
-              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${
+              className={`whitespace-nowrap py-4 px-1 border-b-4 font-medium text-sm ${
                 activeTab === tab.id
-                  ? 'border-blue-500 text-blue-600'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  ? 'border-primary  text-primary'
+                  : 'border-transparent text-muted-foreground hover:text-primary hover:border-primary/50'
               }`}
             >
               {tab.label}
@@ -60,7 +60,7 @@ export default function AccountPage() {
       </div>
 
       {/* Tab Content */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="p-2">
         <ActiveComponent />
       </div>
     </div>

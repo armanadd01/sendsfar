@@ -31,7 +31,8 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://unpkg.com/dropzone@6.0.0-beta.2/dist/dropzone.css" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        id="upload-zone"
+        className={`${geistSans.variable} ${geistMono.variable} antialiased grid min-h-screen font-sans`}
       >
         <NavigationProvider>
           <ThemeProvider 

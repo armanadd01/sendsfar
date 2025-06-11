@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 
 export default function AccountSecurity() {
   const [twoFactorEnabled, setTwoFactorEnabled] = useState(false);
@@ -25,11 +26,11 @@ export default function AccountSecurity() {
   return (
     <div className="space-y-8">
       {/* Password Update Section */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <Card className="rounded-lg shadow p-6">
         <h2 className="text-lg font-medium mb-4">Change Password</h2>
         <form onSubmit={handlePasswordChange} className="space-y-4">
           <div>
-            <label htmlFor="current-password" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="current-password" className="block text-sm font-medium text-muted-foreground">
               Current Password
             </label>
             <Input
@@ -42,7 +43,7 @@ export default function AccountSecurity() {
             />
           </div>
           <div>
-            <label htmlFor="new-password" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="new-password" className="block text-sm font-medium text-muted-foreground">
               New Password
             </label>
             <Input
@@ -55,7 +56,7 @@ export default function AccountSecurity() {
             />
           </div>
           <div>
-            <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="confirm-password" className="block text-sm font-medium text-muted-foreground">
               Confirm New Password
             </label>
             <Input
@@ -68,15 +69,15 @@ export default function AccountSecurity() {
             />
           </div>
           <div className="pt-2">
-            <Button type="submit" className="px-6">
+            <Button type="submit" className="px-6 text-primary-foreground">
               Update Password
             </Button>
           </div>
         </form>
-      </div>
+      </Card>
 
       {/* Two-Factor Authentication Section */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <Card className="rounded-lg shadow p-6">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-lg font-medium text-primary">Two-Factor Authentication</h2>
@@ -131,51 +132,54 @@ export default function AccountSecurity() {
             </div>
           </div>
         )}
-      </div>
+      </Card>
 
       {/* Active Sessions */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <Card className="rounded-lg shadow p-6">
         <h2 className="text-lg font-medium mb-4">Active Sessions</h2>
-        <div className="overflow-hidden border border-gray-200 rounded-md">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Device</TableHead>
-                <TableHead>Location</TableHead>
-                <TableHead>Last Active</TableHead>
-                <TableHead className="text-right">Sign out</TableHead>
+        <div className="overflow-hidden border border-primary rounded-md">
+          <Table className="!p-4">
+            <TableHeader className="bg-primary text-primary-foreground ">
+              <TableRow className="m-4">
+                <TableHead className='px-4 py-3'>Device</TableHead>
+                <TableHead className='px-4 py-3'>Location</TableHead>
+                <TableHead className='px-4 py-3'>Last Active</TableHead>
+                <TableHead className="text-right px-4 py-3">Sign out</TableHead>
               </TableRow>
             </TableHeader>
-            <TableBody>
+            <TableBody className="h-20">
               <TableRow>
-                <TableCell>
+                <TableCell className="px-4 py-3">
                   <div className="flex items-center">
-                    <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center bg-blue-100 rounded-md">
-                      <svg className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center bg-primary/5 rounded-md">
+                      <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
                     <div className="ml-4">
-                      <div className="text-sm font-medium text-gray-900">Windows 10</div>
+                      <div className="text-sm font-medium text-muted-foreground">Windows 10</div>
                       <div className="text-sm text-gray-500">Chrome 114.0.5735.199</div>
                     </div>
                   </div>
                 </TableCell>
-                <TableCell>
-                  <div className="text-sm text-gray-900">New York, USA</div>
-                  <div className="text-sm text-gray-500">192.168.1.1</div>
+                <TableCell className="px-4 py-3">
+                  <div className="text-sm text-muted-foreground">New York, USA</div>
+                  <div className="text-sm text-primary/50">192.168.1.1</div>
                 </TableCell>
-                <TableCell className="text-sm text-gray-500">
+                <TableCell className="text-sm text-gray-500 px-4 py-3">
+                  <svg className="inline-block h-3 w-3 text-ring mr-1 mb-1.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+                  </svg>
                   Just now
                 </TableCell>
                 <TableCell className="text-right text-sm font-medium">
-                  <button className="text-blue-600 hover:text-blue-900">Sign out</button>
+                  <button className="text-red-500 hover:text-red-700">Sign out</button>
                 </TableCell>
               </TableRow>
             </TableBody>
           </Table>
         </div>
-      </div>
+      </Card>
     </div>
   );
 }

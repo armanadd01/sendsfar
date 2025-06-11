@@ -177,6 +177,7 @@
     --sidebar-ring: oklch(0.65 0.24 145.0) !important;
   } */
 
+
   :root[data-color-theme="amber"] {
     --primary: oklch(0.55 0.24 80.0) !important;
     --primary-foreground: oklch(0.984 0.003 247.858) !important;
@@ -202,6 +203,7 @@
     --sidebar-primary: oklch(0.65 0.24 80.0) !important;
     --sidebar-ring: oklch(0.65 0.24 80.0) !important;
   }
+
 
   :root[data-color-theme="rose"] {
     --primary: oklch(0.55 0.24 0.0) !important;
@@ -363,141 +365,144 @@
    🌊 Celtic Blue (#0071E3)
 ================================ */
 :root[data-color-theme="celtic-blue"] {
-  --primary: oklch(0.589 0.235 254.1) !important;
-  --primary-foreground: oklch(0.99 0 0) !important;
-  --ring: oklch(0.589 0.235 254.1) !important;
-  --chart-1: oklch(0.589 0.235 254.1) !important;
-  --accent: oklch(0.589 0.235 254.1 / 0.2) !important;
-  --accent-foreground: oklch(0.589 0.235 254.1) !important;
-  --secondary: oklch(0.589 0.235 254.1 / 0.1) !important;
-  --secondary-foreground: oklch(0.589 0.235 254.1) !important;
-  --sidebar-primary: oklch(0.589 0.235 254.1) !important;
-  --sidebar-ring: oklch(0.589 0.235 254.1) !important;
+  --primary: rgba(0, 113, 227, 1) !important;
+  --primary-foreground: rgba(255, 255, 255, 1) !important;
+  --ring: rgba(0, 113, 227, 1) !important;
+  --chart-1: rgba(0, 113, 227, 1) !important;
+  --accent: rgba(0, 113, 227, 0.2) !important;
+  --accent-foreground: rgba(0, 113, 227, 1) !important;
+  --secondary: rgba(0, 113, 227, 0.1) !important;
+  --secondary-foreground: rgba(0, 113, 227, 1) !important;
+  --sidebar-primary: rgba(0, 113, 227, 1) !important;
+  --sidebar-ring: rgba(0, 113, 227, 1) !important;
 }
 :root[data-color-theme="celtic-blue"].dark {
-  --primary: oklch(0.69 0.22 254.1) !important;
-  --primary-foreground: oklch(0.15 0 0) !important;
-  --ring: oklch(0.69 0.22 254.1) !important;
-  --chart-1: oklch(0.69 0.22 254.1) !important;
-  --accent: oklch(0.69 0.22 254.1 / 0.2) !important;
-  --accent-foreground: oklch(0.69 0.22 254.1) !important;
-  --secondary: oklch(0.69 0.22 254.1 / 0.1) !important;
-  --secondary-foreground: oklch(0.69 0.22 254.1) !important;
-  --sidebar-primary: oklch(0.69 0.22 254.1) !important;
-  --sidebar-ring: oklch(0.69 0.22 254.1) !important;
+  --primary: rgba(0, 113, 227, 1) !important;
+  --primary-foreground: rgba(38, 38, 38, 1) !important;
+  --ring: rgba(0, 113, 227, 1) !important;
+  --chart-1: rgba(0, 113, 227, 1) !important;
+  --accent: rgba(0, 113, 227, 0.2) !important;
+  --accent-foreground: rgba(0, 113, 227, 1) !important;
+  --secondary: rgba(0, 113, 227, 0.1) !important;
+  --secondary-foreground: rgba(0, 113, 227, 1) !important;
+  --sidebar-primary: rgba(0, 113, 227, 1) !important;
+  --sidebar-ring: rgba(0, 113, 227, 1) !important;
 }
 
 /* ================================
    🌿 Light Mint (#D8FFD8)
 ================================ */
 :root[data-color-theme="light-mint"] {
-  --primary: oklch(0.967 0.041 142.4) !important;
-  --primary-foreground: oklch(0.22 0.02 140) !important;
-  --ring: oklch(0.967 0.041 142.4) !important;
-  --chart-1: oklch(0.967 0.041 142.4) !important;
-  --accent: oklch(0.967 0.041 142.4 / 0.2) !important;
-  --accent-foreground: oklch(0.22 0.02 140) !important;
-  --secondary: oklch(0.967 0.041 142.4 / 0.1) !important;
-  --secondary-foreground: oklch(0.22 0.02 140) !important;
-  --sidebar-primary: oklch(0.967 0.041 142.4) !important;
-  --sidebar-ring: oklch(0.967 0.041 142.4) !important;
+  --primary: rgba(216, 255, 216, 1) !important;
+  --primary-foreground: rgba(56, 56, 56, 1) !important;
+  --ring: rgba(216, 255, 216, 1) !important;
+  --chart-1: rgba(216, 255, 216, 1) !important;
+  --accent: rgba(216, 255, 216, 0.2) !important;
+  --accent-foreground: rgba(56, 56, 56, 1) !important;
+  --secondary: rgba(216, 255, 216, 0.1) !important;
+  --secondary-foreground: rgba(56, 56, 56, 1) !important;
+  --sidebar-primary: rgba(216, 255, 216, 1) !important;
+  --sidebar-ring: rgba(216, 255, 216, 1) !important;
 }
 :root[data-color-theme="light-mint"].dark {
-  --primary: oklch(0.8 0.07 142.4) !important;
-  --primary-foreground: oklch(0.12 0.01 140) !important;
-  --ring: oklch(0.8 0.07 142.4) !important;
-  --chart-1: oklch(0.8 0.07 142.4) !important;
-  --accent: oklch(0.8 0.07 142.4 / 0.2) !important;
-  --accent-foreground: oklch(0.12 0.01 140) !important;
-  --secondary: oklch(0.8 0.07 142.4 / 0.1) !important;
-  --secondary-foreground: oklch(0.12 0.01 140) !important;
-  --sidebar-primary: oklch(0.8 0.07 142.4) !important;
-  --sidebar-ring: oklch(0.8 0.07 142.4) !important;
+  --primary: rgba(160, 240, 160, 1) !important;
+  --primary-foreground: rgba(30, 30, 30, 1) !important;
+  --ring: rgba(160, 240, 160, 1) !important;
+  --chart-1: rgba(160, 240, 160, 1) !important;
+  --accent: rgba(160, 240, 160, 0.2) !important;
+  --accent-foreground: rgba(30, 30, 30, 1) !important;
+  --secondary: rgba(160, 240, 160, 0.1) !important;
+  --secondary-foreground: rgba(30, 30, 30, 1) !important;
+  --sidebar-primary: rgba(160, 240, 160, 1) !important;
+  --sidebar-ring: rgba(160, 240, 160, 1) !important;
 }
 
 /* ================================
    🔥 Imperial Red (#FB3844)
 ================================ */
 :root[data-color-theme="imperial-red"] {
-  --primary: oklch(0.627 0.27 27.4) !important;
-  --primary-foreground: oklch(0.99 0 0) !important;
-  --ring: oklch(0.627 0.27 27.4) !important;
-  --chart-1: oklch(0.627 0.27 27.4) !important;
-  --accent: oklch(0.627 0.27 27.4 / 0.2) !important;
-  --accent-foreground: oklch(0.627 0.27 27.4) !important;
-  --secondary: oklch(0.627 0.27 27.4 / 0.1) !important;
-  --secondary-foreground: oklch(0.627 0.27 27.4) !important;
-  --sidebar-primary: oklch(0.627 0.27 27.4) !important;
-  --sidebar-ring: oklch(0.627 0.27 27.4) !important;
+  --primary: rgba(251, 56, 68, 1) !important;
+  --primary-foreground: rgba(255, 255, 255, 1) !important;
+  --ring: rgba(251, 56, 68, 1) !important;
+  --chart-1: rgba(251, 56, 68, 1) !important;
+  --accent: rgba(251, 56, 68, 0.2) !important;
+  --accent-foreground: rgba(251, 56, 68, 1) !important;
+  --secondary: rgba(251, 56, 68, 0.1) !important;
+  --secondary-foreground: rgba(251, 56, 68, 1) !important;
+  --sidebar-primary: rgba(251, 56, 68, 1) !important;
+  --sidebar-ring: rgba(251, 56, 68, 1) !important;
 }
 :root[data-color-theme="imperial-red"].dark {
-  --primary: oklch(0.72 0.27 27.4) !important;
-  --primary-foreground: oklch(0.1 0.01 250) !important;
-  --ring: oklch(0.72 0.27 27.4) !important;
-  --chart-1: oklch(0.72 0.27 27.4) !important;
-  --accent: oklch(0.72 0.27 27.4 / 0.2) !important;
-  --accent-foreground: oklch(0.1 0.01 250) !important;
-  --secondary: oklch(0.72 0.27 27.4 / 0.1) !important;
-  --secondary-foreground: oklch(0.1 0.01 250) !important;
-  --sidebar-primary: oklch(0.72 0.27 27.4) !important;
-  --sidebar-ring: oklch(0.72 0.27 27.4) !important;
+  --primary: rgba(255, 80, 90, 1) !important;
+  --primary-foreground: rgba(20, 20, 20, 1) !important;
+  --ring: rgba(255, 80, 90, 1) !important;
+  --chart-1: rgba(255, 80, 90, 1) !important;
+  --accent: rgba(255, 80, 90, 0.2) !important;
+  --accent-foreground: rgba(20, 20, 20, 1) !important;
+  --secondary: rgba(255, 80, 90, 0.1) !important;
+  --secondary-foreground: rgba(20, 20, 20, 1) !important;
+  --sidebar-primary: rgba(255, 80, 90, 1) !important;
+  --sidebar-ring: rgba(255, 80, 90, 1) !important;
 }
 
 /* ================================
    ⚫️ Raisin Black (#171720)
 ================================ */
 :root[data-color-theme="raisin-black"] {
-  --primary: oklch(0.165 0.02 286.6) !important;
-  --primary-foreground: oklch(0.97 0 0) !important;
-  --ring: oklch(0.165 0.02 286.6) !important;
-  --chart-1: oklch(0.165 0.02 286.6) !important;
-  --accent: oklch(0.165 0.02 286.6 / 0.2) !important;
-  --accent-foreground: oklch(0.165 0.02 286.6) !important;
-  --secondary: oklch(0.165 0.02 286.6 / 0.1) !important;
-  --secondary-foreground: oklch(0.165 0.02 286.6) !important;
-  --sidebar-primary: oklch(0.165 0.02 286.6) !important;
-  --sidebar-ring: oklch(0.165 0.02 286.6) !important;
+  --primary: rgba(23, 23, 32, 1) !important;
+  --primary-foreground: rgba(255, 255, 255, 1) !important;
+  --ring: rgba(23, 23, 32, 1) !important;
+  --chart-1: rgba(23, 23, 32, 1) !important;
+  --accent: rgba(23, 23, 32, 0.2) !important;
+  --accent-foreground: rgba(23, 23, 32, 1) !important;
+  --secondary: rgba(23, 23, 32, 0.1) !important;
+  --secondary-foreground: rgba(23, 23, 32, 1) !important;
+  --sidebar-primary: rgba(23, 23, 32, 1) !important;
+  --sidebar-ring: rgba(23, 23, 32, 1) !important;
 }
 :root[data-color-theme="raisin-black"].dark {
-  --primary: oklch(0.25 0.02 286.6) !important;
-  --primary-foreground: oklch(0.99 0 0) !important;
-  --ring: oklch(0.25 0.02 286.6) !important;
-  --chart-1: oklch(0.25 0.02 286.6) !important;
-  --accent: oklch(0.25 0.02 286.6 / 0.2) !important;
-  --accent-foreground: oklch(0.99 0 0) !important;
-  --secondary: oklch(0.25 0.02 286.6 / 0.1) !important;
-  --secondary-foreground: oklch(0.99 0 0) !important;
-  --sidebar-primary: oklch(0.25 0.02 286.6) !important;
-  --sidebar-ring: oklch(0.25 0.02 286.6) !important;
+  --primary: rgba(38, 38, 48, 1) !important;
+  --primary-foreground: rgba(255, 255, 255, 1) !important;
+  --ring: rgba(38, 38, 48, 1) !important;
+  --chart-1: rgba(38, 38, 48, 1) !important;
+  --accent: rgba(38, 38, 48, 0.2) !important;
+  --accent-foreground: rgba(255, 255, 255, 1) !important;
+  --secondary: rgba(38, 38, 48, 0.1) !important;
+  --secondary-foreground: rgba(255, 255, 255, 1) !important;
+  --sidebar-primary: rgba(38, 38, 48, 1) !important;
+  --sidebar-ring: rgba(38, 38, 48, 1) !important;
 }
 
 /* ================================
    🟢 Persian Green (#019B69)
 ================================ */
 :root[data-color-theme="persian-green"] {
-  --primary: oklch(0.58 0.22 182.1) !important;
-  --primary-foreground: oklch(0.98 0 0) !important;
-  --ring: oklch(0.58 0.22 182.1) !important;
-  --chart-1: oklch(0.58 0.22 182.1) !important;
-  --accent: oklch(0.58 0.22 182.1 / 0.2) !important;
-  --accent-foreground: oklch(0.58 0.22 182.1) !important;
-  --secondary: oklch(0.58 0.22 182.1 / 0.1) !important;
-  --secondary-foreground: oklch(0.58 0.22 182.1) !important;
-  --sidebar-primary: oklch(0.58 0.22 182.1) !important;
-  --sidebar-ring: oklch(0.58 0.22 182.1) !important;
+  --primary: rgba(1, 155, 105, 1) !important;
+  --primary-foreground: rgba(255, 255, 255, 1) !important;
+  --ring: rgba(1, 155, 105, 1) !important;
+  --chart-1: rgba(1, 155, 105, 1) !important;
+  --accent: rgba(1, 155, 105, 0.2) !important;
+  --accent-foreground: rgba(1, 155, 105, 1) !important;
+  --secondary: rgba(1, 155, 105, 0.1) !important;
+  --secondary-foreground: rgba(1, 155, 105, 1) !important;
+  --sidebar-primary: rgba(1, 155, 105, 1) !important;
+  --sidebar-ring: rgba(1, 155, 105, 1) !important;
 }
 :root[data-color-theme="persian-green"].dark {
-  --primary: oklch(0.65 0.22 182.1) !important;
-  --primary-foreground: oklch(0.12 0 0) !important;
-  --ring: oklch(0.65 0.22 182.1) !important;
-  --chart-1: oklch(0.65 0.22 182.1) !important;
-  --accent: oklch(0.65 0.22 182.1 / 0.2) !important;
-  --accent-foreground: oklch(0.12 0 0) !important;
-  --secondary: oklch(0.65 0.22 182.1 / 0.1) !important;
-  --secondary-foreground: oklch(0.12 0 0) !important;
-  --sidebar-primary: oklch(0.65 0.22 182.1) !important;
-  --sidebar-ring: oklch(0.65 0.22 182.1) !important;
+  --primary: rgba(10, 175, 115, 1) !important;
+  --primary-foreground: rgba(30, 30, 30, 1) !important;
+  --ring: rgba(10, 175, 115, 1) !important;
+  --chart-1: rgba(10, 175, 115, 1) !important;
+  --accent: rgba(10, 175, 115, 0.2) !important;
+  --accent-foreground: rgba(30, 30, 30, 1) !important;
+  --secondary: rgba(10, 175, 115, 0.1) !important;
+  --secondary-foreground: rgba(30, 30, 30, 1) !important;
+  --sidebar-primary: rgba(10, 175, 115, 1) !important;
+  --sidebar-ring: rgba(10, 175, 115, 1) !important;
 }
+ 
+
+
 
 
 

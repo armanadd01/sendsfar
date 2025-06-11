@@ -147,7 +147,7 @@ export default function PricingPage() {
 					</CardContent>
 						<CardFooter className='flex flex-col items-stretch self-end'>
 							<Button 
-								className={`w-full ${plan.isCurrent ? 'bg-muted-foreground/60 text-primary-foreground': ''}`}
+								className={`w-full ${plan.isCurrent ? 'bg-muted-foreground/60 text-muted-foreground': ''}`}
 								disabled={plan.isCurrent}
 								onClick={() => handleUpgrade(plan)}
 								variant={plan.isPopular ? 'default' : 'outline'}

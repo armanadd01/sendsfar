@@ -324,10 +324,10 @@ const FileUpload = forwardRef<FileUploadHandle, FileUploadProps>(({
   
 
   return (
-    <div className={`w-full relative ${className}`} {...props}>
+    <div className={`w-full relative grid justify-items-stretch align-items-stretch min-h-full ${className}`} {...props}>
       <Card
         id="upload-zone"
-        className="dropzone !min-h-[100vh] !max-h-[100vh] "
+        className="dropzone bg-muted"
       >
         {/* <div className="flex flex-col items-center justify-center h-full">
           <div className="text-center text-gray-500 dark:text-gray-400">

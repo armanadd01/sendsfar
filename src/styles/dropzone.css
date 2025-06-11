@@ -1,6 +1,6 @@
 /* Custom Dropzone Theme */
 .dropzone {
-  min-height: 100% !important;
+  /* min-height: 100% !important; */
   transition: border-color 0.3s;
   overflow: hidden;
   overflow-y: scroll;
