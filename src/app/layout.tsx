@@ -28,10 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js" async></script> */}
         <link rel="stylesheet" href="https://unpkg.com/dropzone@6.0.0-beta.2/dist/dropzone.css" />
       </head>
       <body
-        id="upload-zone"
+        // id="upload-zone"
         className={`${geistSans.variable} ${geistMono.variable} antialiased grid min-h-screen font-sans`}
       >
         <NavigationProvider>
